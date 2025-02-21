@@ -1,0 +1,30 @@
+---
+import Navbar from './Navbar.astro'
+import Logo from '../../assets/logo-dark.svg'
+import { Image } from 'astro:assets'
+---
+
+<header class='w-full py-4 px-6 lg:px-12 bg-background text-color-text-primary'>
+  <div class='flex justify-between items-center max-w-7xl mx-auto'>
+    <a href='/' class='flex items-center'>
+      <Image
+        src={Logo}
+        alt='Tech Solutions Logo'
+        width={150}
+        height={70}
+        loading='eager'
+      />
+    </a>
+
+    <Navbar />
+
+    <div class='hidden'>
+      <select
+        class='bg-transparent text-color-text-primary text-lg outline-none'
+      >
+        <option value='es'>ES</option>
+        <option value='en'>EN</option>
+      </select>
+    </div>
+  </div>
+</header>

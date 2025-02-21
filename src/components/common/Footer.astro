@@ -1,0 +1,30 @@
+---
+import { FOOTER } from '../../mocks'
+const { year, company, links, message } = FOOTER
+import Logo from '../../assets/logo-dark.svg'
+import { Image } from 'astro:assets'
+---
+
+<footer class='py-15 bg-background text-center text-white text-sm font-bold'>
+  <div class='max-w-7xl mx-auto px-6'>
+    <a href='/' class='flex justify-center items-center'>
+      <Image src={Logo} alt='{company} Logo' width={150} height={64} />
+    </a>
+
+    <nav class='mt-4 flex justify-center space-x-6 text-xl font-normal'>
+      {
+        links.map((link) => (
+          <a href={link.href} class='hover:text-secondary transition-colors'>
+            {link.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <p class='text-sm text-gray-400 mt-6'>
+      © {year}
+      {message}
+      <span class='font-semibold'>{company}</span>.
+    </p>
+  </div>
+</footer>

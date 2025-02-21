@@ -1,0 +1,67 @@
+---
+import Layout from '../layouts/Layout.astro'
+import { FOOTER } from '../mocks'
+const { year, company } = FOOTER
+---
+
+<Layout>
+  <section class='max-w-4xl mx-auto py-15 px-6'>
+    <h1 class='text-3xl font-bold text-white'>Política de Privacidad</h1>
+    <p class='mt-4 text-gray-300'>
+      En <strong>{company}</strong>, nos comprometemos a proteger tu privacidad.
+      Esta política explica cómo recopilamos, usamos y protegemos tu
+      información.
+    </p>
+
+    <h2 class='mt-8 text-2xl font-semibold text-secondary'>
+      1. Información que Recopilamos
+    </h2>
+    <p class='mt-2 text-gray-300'>
+      Recopilamos información que nos proporcionas voluntariamente, como nombre,
+      correo electrónico y detalles del proyecto. También podemos recopilar
+      datos de uso de la web para mejorar nuestros servicios.
+    </p>
+
+    <h2 class='mt-8 text-2xl font-semibold text-secondary'>
+      2. Uso de la Información
+    </h2>
+    <p class='mt-2 text-gray-300'>
+      Usamos tu información para:
+      <ul class='list-disc list-inside mt-2 text-gray-300'>
+        <li>Proveer y mejorar nuestros servicios</li>
+        <li>Comunicarnos contigo sobre tu proyecto</li>
+        <li>Cumplir con requisitos legales y de seguridad</li>
+      </ul>
+    </p>
+
+    <h2 class='mt-8 text-2xl font-semibold text-secondary'>
+      3. Protección de Datos
+    </h2>
+    <p class='mt-2 text-gray-300'>
+      Implementamos medidas de seguridad para proteger tu información. Sin
+      embargo, ninguna transmisión de datos en Internet es completamente segura.
+    </p>
+
+    <h2 class='mt-8 text-2xl font-semibold text-secondary'>4. Cookies</h2>
+    <p class='mt-2 text-gray-300'>
+      Utilizamos cookies para mejorar la experiencia del usuario. Puedes
+      deshabilitarlas en la configuración de tu navegador.
+    </p>
+
+    <h2 class='mt-8 text-2xl font-semibold text-secondary'>
+      5. Derechos del Usuario
+    </h2>
+    <p class='mt-2 text-gray-300'>
+      Tienes derecho a acceder, modificar o eliminar tu información personal.
+      Para ejercer estos derechos, contáctanos en nuestro correo oficial.
+    </p>
+
+    <p class='mt-6 text-gray-400'>Última actualización: {year}</p>
+  </section>
+  <a
+    href='/'
+    class='m-6 inline-block px-6 py-3 text-lg font-semibold text-white bg-secondary rounded-lg hover:bg-hover transition-all'
+  >
+    ← Volver al inicio
+  </a>
+</Layout>

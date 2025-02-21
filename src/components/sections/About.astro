@@ -1,0 +1,28 @@
+---
+import { ABOUT } from '../../mocks'
+const { title, subtitle, description } = ABOUT
+import Team from '../../assets/team.svg'
+import { Image } from 'astro:assets'
+---
+
+<section id='about' class='py-15'>
+  <div
+    class='max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-10 justify-between'
+  >
+    <div class='md:w-1/2'>
+      <h2 class='text-3xl md:text-4xl font-bold uppercase'>{title}</h2>
+      <p class='text-lg mt-2'>{subtitle}</p>
+      <p class='text-text-primary mt-4'>{description}</p>
+    </div>
+
+    <div class='md:w-1/2 flex justify-center'>
+      <Image
+        src={Team}
+        alt='Equipo de trabajo'
+        width={150}
+        height={70}
+        class='w-full max-w-md'
+      />
+    </div>
+  </div>
+</section>
