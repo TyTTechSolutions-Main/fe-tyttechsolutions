@@ -1,4 +1,3 @@
-import { lazy } from 'react'
 import {
   Code,
   BarChart,
@@ -7,7 +6,7 @@ import {
   Instagram,
   Phone,
   Linkedin,
-} from 'lucide-react'
+} from 'lucide-static'
 
 
 // Lista de iconos usados
