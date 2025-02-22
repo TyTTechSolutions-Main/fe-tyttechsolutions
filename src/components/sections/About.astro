@@ -1,7 +1,6 @@
 ---
 import { ABOUT } from '../../mocks'
 const { title, subtitle, description } = ABOUT
-import Team from '../../assets/team.svg'
 import { Image } from 'astro:assets'
 ---
 
@@ -17,7 +16,7 @@ import { Image } from 'astro:assets'
 
     <div class='md:w-1/2 flex justify-center'>
       <Image
-        src={Team}
+        src='/images/team.svg'
         alt='Equipo de trabajo'
         width={150}
         height={70}

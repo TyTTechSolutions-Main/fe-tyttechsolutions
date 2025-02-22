@@ -2,14 +2,18 @@
 import { FOOTER, COMPANY } from '../../mocks'
 const { links, message } = FOOTER
 const { name, year } = COMPANY
-import Logo from '../../assets/logo-dark.svg'
 import { Image } from 'astro:assets'
 ---
 
 <footer class='py-15 bg-background text-center text-white text-sm font-bold'>
   <div class='max-w-7xl mx-auto px-6'>
     <a href='/' class='flex justify-center items-center'>
-      <Image src={Logo} alt='{name} Logo' width={150} height={64} />
+      <Image
+        src='/images/logo-dark.svg'
+        alt='{name} Logo'
+        width={150}
+        height={64}
+      />
     </a>
 
     <nav class='mt-4 flex justify-center space-x-6 text-xl font-normal'>
