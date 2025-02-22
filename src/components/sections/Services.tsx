@@ -1,15 +1,9 @@
-import { SERVICES } from '../../mocks'
-import { Icons } from '../../utils/optimizedIcons'
-import Card from '../common/Card'
-import { Suspense } from 'react'
+import { SERVICES } from '../../mocks';
+import { Icons } from '../../utils/optimizedIcons';
+import Card from '../common/Card';
 
-const { title, subtitle, items } = SERVICES
-
-const iconComponents: Record<string, React.FC<{ className?: string }>> = {
-  Code: Icons.Code || (() => null),
-  BarChart: Icons.BarChart || (() => null),
-  Bot: Icons.Bot || (() => null),
-}
+const { title, subtitle, items } = SERVICES;
+const { Code, BarChart, Bot } = Icons;
 
 export default function Services() {
   return (
@@ -19,16 +13,16 @@ export default function Services() {
         <p className="text-lg md:text-xl mt-4">{subtitle}</p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
-          {items.map((service) => {
-            const IconComponent = iconComponents[service.icon as keyof typeof iconComponents] || null;
+          {items.map(({ title, description, icon }) => {
+            const iconSrc = { Code, BarChart, Bot }[icon as keyof typeof Icons];
 
             return (
               <Card
-                key={service.title}
-                title={service.title}
-                description={service.description}
-                icon={IconComponent ? (
-                  <IconComponent className="w-8 h-8 text-white" />
+                key={title}
+                title={title}
+                description={description}
+                icon={iconSrc ? (
+                  <img src={iconSrc} alt={title} className="w-8 h-8 text-white invert" />
                 ) : null}
               />
             );
@@ -36,5 +30,5 @@ export default function Services() {
         </div>
       </div>
     </section>
-  )
+  );
 }
