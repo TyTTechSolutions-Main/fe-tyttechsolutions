@@ -1,7 +1,7 @@
 import { defineConfig } from 'astro/config';
 import tailwindcss from "@tailwindcss/vite";
 import react from '@astrojs/react';
-import netlify from '@astrojs/netlify';
+import netlify from '@astrojs/netlify/edge';
 
 export default defineConfig({
   output: 'server',
