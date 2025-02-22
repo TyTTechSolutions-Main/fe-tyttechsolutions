@@ -5,7 +5,6 @@ export default function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false)
 
   const toggleMenu = () => {
-    console.log('toggleMenu')
     setIsOpen(!isOpen)
   }
 

@@ -4,7 +4,6 @@ const { typeProject } = CONTACT;
 
 const ProjectTypeSelector = ({ selectedChips, setSelectedChips }: { selectedChips: string[], setSelectedChips: React.Dispatch<React.SetStateAction<string[]>> }) => {
   const toggleChip = (option: string) => {
-    console.log(option);
     setSelectedChips((prev) =>
       prev.includes(option) ? prev.filter((item) => item !== option) : [...prev, option]
     );
