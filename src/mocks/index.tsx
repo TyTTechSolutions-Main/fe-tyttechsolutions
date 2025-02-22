@@ -77,7 +77,7 @@ export const CONTACT = {
 
 export const SOCIALS = {
   links: [
-    { icon: 'Mail', href: '#', label: 'tyttechsolutions@gmail.com' },
+    { icon: 'Mail', href: 'mailto:tyttechsolutions@gmail.com', label: 'tyttechsolutions@gmail.com' },
     { icon: 'Instagram', href: '#', label: '/tyttechsolutions' },
     { icon: 'Phone', href: '#', label: '+56 9 1234 5678' },
     { icon: 'Linkedin', href: '#', label: '/tyttechsolutions' },
@@ -85,8 +85,6 @@ export const SOCIALS = {
 };
 
 export const FOOTER = {
-  year: new Date().getFullYear(),
-  company: 'T&T TECH SOLUTIONS',
   links: [
     { href: '/terminos', label: 'Términos y condiciones' },
     { href: '/privacidad', label: 'Política de Privacidad' },
