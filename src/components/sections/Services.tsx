@@ -1,13 +1,13 @@
 import { SERVICES } from '../../mocks'
-import { Code, BarChart, Bot } from 'lucide-react'
+import { Icons } from '../../utils/optimizedIcons';
 import Card from '../common/Card'
 
 const { title, subtitle, items } = SERVICES
 
 const iconComponents: Record<string, React.FC<{ className?: string }>> = {
-  Code,
-  BarChart,
-  Bot,
+  Code: Icons.Code,
+  BarChart: Icons.BarChart,
+  Bot: Icons.Bot,
 }
 
 export default function Services() {

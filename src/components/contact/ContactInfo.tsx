@@ -1,11 +1,11 @@
-import { Mail, Instagram, Phone, Linkedin } from 'lucide-react'
+import { Icons } from '../../utils/optimizedIcons';
 import { SOCIALS, CONTACT } from '../../mocks'
 
 const iconComponents: Record<string, React.FC<{ className?: string }>> = {
-  Mail,
-  Instagram,
-  Phone,
-  Linkedin,
+  Mail: Icons.Mail,
+  Instagram: Icons.Instagram,
+  Phone: Icons.Phone,
+  Linkedin: Icons.Linkedin,
 }
 
 const { title } = CONTACT
