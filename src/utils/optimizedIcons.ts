@@ -1,40 +1,15 @@
-import { lazy } from 'react'
+import { lazy } from 'react';
+import * as LucideStatic from 'lucide-static';
 
 // Verifica si estamos en Netlify (producción)
-const isNetlify = import.meta.env?.NETLIFY === 'true'
+const isNetlify = import.meta.env?.NETLIFY === 'true';
 
-// Importaciones normales en desarrollo
-import {
-  Code,
-  BarChart,
-  Bot,
-  Mail,
-  Instagram,
-  Phone,
-  Linkedin,
-} from 'lucide-react'
+// Lista de íconos usados
+const icons = ['Code', 'BarChart', 'Bot', 'Mail', 'Instagram', 'Phone', 'Linkedin'];
 
-// Si estamos en producción (Netlify), usa importaciones dinámicas
 export const Icons = isNetlify
-  ? {
-      Code: lazy(() =>
-        import('lucide-react').then((m) => ({ default: m.Code }))
-      ),
-      BarChart: lazy(() =>
-        import('lucide-react').then((m) => ({ default: m.BarChart }))
-      ),
-      Bot: lazy(() => import('lucide-react').then((m) => ({ default: m.Bot }))),
-      Mail: lazy(() =>
-        import('lucide-react').then((m) => ({ default: m.Mail }))
-      ),
-      Instagram: lazy(() =>
-        import('lucide-react').then((m) => ({ default: m.Instagram }))
-      ),
-      Phone: lazy(() =>
-        import('lucide-react').then((m) => ({ default: m.Phone }))
-      ),
-      Linkedin: lazy(() =>
-        import('lucide-react').then((m) => ({ default: m.Linkedin }))
-      ),
-    }
-  : { Code, BarChart, Bot, Mail, Instagram, Phone, Linkedin }
+  ? icons.reduce((acc, name) => {
+      acc[name] = lazy(() => import(`lucide-static/icons/${name}.js`).then((mod) => ({ default: mod.default })));
+      return acc;
+    }, {} as Record<string, any>)
+  : LucideStatic;

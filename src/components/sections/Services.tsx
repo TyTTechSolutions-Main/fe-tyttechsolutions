@@ -6,9 +6,9 @@ import { Suspense } from 'react'
 const { title, subtitle, items } = SERVICES
 
 const iconComponents: Record<string, React.FC<{ className?: string }>> = {
-  Code: Icons.Code,
-  BarChart: Icons.BarChart,
-  Bot: Icons.Bot,
+  Code: Icons.Code || (() => null),
+  BarChart: Icons.BarChart || (() => null),
+  Bot: Icons.Bot || (() => null),
 }
 
 export default function Services() {

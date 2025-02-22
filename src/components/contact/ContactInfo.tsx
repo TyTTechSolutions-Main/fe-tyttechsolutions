@@ -3,10 +3,10 @@ import { SOCIALS, CONTACT } from '../../mocks'
 import { Suspense } from 'react'
 
 const iconComponents: Record<string, React.FC<{ className?: string }>> = {
-  Mail: Icons.Mail,
-  Instagram: Icons.Instagram,
-  Phone: Icons.Phone,
-  Linkedin: Icons.Linkedin,
+  Mail: Icons.Mail || (() => null),
+  Instagram: Icons.Instagram || (() => null),
+  Phone: Icons.Phone || (() => null),
+  Linkedin: Icons.Linkedin || (() => null),
 }
 
 const { title } = CONTACT
