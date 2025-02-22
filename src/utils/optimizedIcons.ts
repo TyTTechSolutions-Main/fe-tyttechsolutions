@@ -1,4 +1,4 @@
-import * as LucideIcons from 'lucide-react'
+import { lazy } from 'react'
 
 console.log('Netlify env:', import.meta.env.NETLIFY)
 
@@ -15,9 +15,11 @@ const icons = [
   'Linkedin',
 ]
 
-export const Icons = isNetlify
-  ? icons.reduce((acc, name) => {
-      acc[name] = LucideIcons[name as keyof typeof LucideIcons] || null
-      return acc
-    }, {} as Record<string, any>)
-  : LucideIcons
+export const Icons = icons.reduce((acc, name) => {
+  acc[name] = lazy(() =>
+    import(`lucide-react/icons/${name}.js`).then((mod) => ({
+      default: mod.default,
+    }))
+  )
+  return acc
+}, {} as Record<string, any>)

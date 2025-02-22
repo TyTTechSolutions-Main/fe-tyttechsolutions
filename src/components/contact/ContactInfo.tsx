@@ -1,5 +1,6 @@
 import { Icons } from '../../utils/optimizedIcons';
 import { SOCIALS, CONTACT } from '../../mocks'
+import { Suspense } from 'react'
 
 const iconComponents: Record<string, React.FC<{ className?: string }>> = {
   Mail: Icons.Mail || (() => null),
@@ -20,7 +21,9 @@ export default function ContactInfo() {
 
           return (
             <li key={link.href} className="flex items-center gap-2">
-              {IconComponent && <IconComponent className="w-6 h-6 text-secondary" />}
+              <Suspense fallback={<div className="w-6 h-6 bg-gray-300 rounded animate-pulse"></div>}>
+                {IconComponent && <IconComponent className="w-6 h-6 text-secondary" />}
+              </Suspense>
               <a href={link.href} className="text-white">{link.label}</a>
             </li>
           );
