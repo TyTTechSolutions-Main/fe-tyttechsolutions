@@ -3,12 +3,17 @@
   publish = "dist"
   functions = ".netlify/functions"
 
+[[headers]]
+  for = "/_astro/*.js"
+  [headers.values]
+    Content-Type = "application/javascript"
+
+[[headers]]
+  for = "/_astro/*.css"
+  [headers.values]
+    Content-Type = "text/css"
+
 [[redirects]]
   from = "/_astro/*"
   to = "/_astro/:splat"
-  status = 200
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
   status = 200
