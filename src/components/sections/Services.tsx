@@ -28,9 +28,7 @@ export default function Services() {
                 title={service.title}
                 description={service.description}
                 icon={IconComponent ? (
-                  <Suspense fallback={<div className="w-8 h-8 bg-gray-300 rounded animate-pulse"></div>}>
-                    <IconComponent className="w-8 h-8 text-white" />
-                  </Suspense>
+                  <IconComponent className="w-8 h-8 text-white" />
                 ) : null}
               />
             );
