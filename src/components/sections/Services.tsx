@@ -1,6 +1,7 @@
 import { SERVICES } from '../../mocks'
-import { Icons } from '../../utils/optimizedIcons';
+import { Icons } from '../../utils/optimizedIcons'
 import Card from '../common/Card'
+import { Suspense } from 'react'
 
 const { title, subtitle, items } = SERVICES
 
@@ -19,16 +20,20 @@ export default function Services() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
           {items.map((service) => {
-            const IconComponent = iconComponents[service.icon as keyof typeof iconComponents] || null
+            const IconComponent = iconComponents[service.icon as keyof typeof iconComponents] || null;
 
             return (
               <Card
                 key={service.title}
                 title={service.title}
                 description={service.description}
-                icon={IconComponent ? <IconComponent className="w-8 h-8 text-white" /> : null}
+                icon={IconComponent ? (
+                  <Suspense fallback={<div className="w-8 h-8 bg-gray-300 rounded animate-pulse"></div>}>
+                    <IconComponent className="w-8 h-8 text-white" />
+                  </Suspense>
+                ) : null}
               />
-            )
+            );
           })}
         </div>
       </div>

@@ -1,3 +1,9 @@
+import { lazy } from 'react'
+
+// Verifica si estamos en Netlify (producción)
+const isNetlify = import.meta.env?.NETLIFY === 'true'
+
+// Importaciones normales en desarrollo
 import {
   Code,
   BarChart,
@@ -8,31 +14,27 @@ import {
   Linkedin,
 } from 'lucide-react'
 
-// Verifica si estamos en Netlify (producción)
-const isNetlify = import.meta.env?.NETLIFY === 'true'
-
 // Si estamos en producción (Netlify), usa importaciones dinámicas
 export const Icons = isNetlify
   ? {
-      Mail: () =>
-        import('lucide-react/dist/esm/icons/mail').then((mod) => mod.default),
-      Instagram: () =>
-        import('lucide-react/dist/esm/icons/instagram').then(
-          (mod) => mod.default
-        ),
-      Phone: () =>
-        import('lucide-react/dist/esm/icons/phone').then((mod) => mod.default),
-      Linkedin: () =>
-        import('lucide-react/dist/esm/icons/linkedin').then(
-          (mod) => mod.default
-        ),
-      Code: () =>
-        import('lucide-react/dist/esm/icons/code').then((mod) => mod.default),
-      BarChart: () =>
-        import('lucide-react/dist/esm/icons/bar-chart').then(
-          (mod) => mod.default
-        ),
-      Bot: () =>
-        import('lucide-react/dist/esm/icons/bot').then((mod) => mod.default),
+      Code: lazy(() =>
+        import('lucide-react').then((m) => ({ default: m.Code }))
+      ),
+      BarChart: lazy(() =>
+        import('lucide-react').then((m) => ({ default: m.BarChart }))
+      ),
+      Bot: lazy(() => import('lucide-react').then((m) => ({ default: m.Bot }))),
+      Mail: lazy(() =>
+        import('lucide-react').then((m) => ({ default: m.Mail }))
+      ),
+      Instagram: lazy(() =>
+        import('lucide-react').then((m) => ({ default: m.Instagram }))
+      ),
+      Phone: lazy(() =>
+        import('lucide-react').then((m) => ({ default: m.Phone }))
+      ),
+      Linkedin: lazy(() =>
+        import('lucide-react').then((m) => ({ default: m.Linkedin }))
+      ),
     }
   : { Code, BarChart, Bot, Mail, Instagram, Phone, Linkedin }
