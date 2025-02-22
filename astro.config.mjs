@@ -1,15 +1,13 @@
 import { defineConfig } from 'astro/config';
-import tailwindcss from '@tailwindcss/vite';
+import tailwind from '@astrojs/tailwind';
 import react from '@astrojs/react';
 import netlify from '@astrojs/netlify/functions';
 
-// https://astro.build/config
 export default defineConfig({
   output: 'server',
   adapter: netlify(),
-  integrations: [react()],
+  integrations: [react(), tailwind()],
   vite: {
-    plugins: [tailwindcss()],
     build: {
       rollupOptions: {
         output: {
