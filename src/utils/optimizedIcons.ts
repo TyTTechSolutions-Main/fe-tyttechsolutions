@@ -1,7 +1,8 @@
-import { lazy } from 'react'
-import * as LucideIcons from 'lucide-static'
+import * as LucideIcons from 'lucide-react'
 
-const isNetlify = import.meta.env.NETLIFY === 'true'
+console.log('Netlify env:', import.meta.env.NETLIFY)
+
+const isNetlify = Boolean(import.meta.env.NETLIFY)
 
 // Lista de iconos usados
 const icons = [
@@ -16,11 +17,7 @@ const icons = [
 
 export const Icons = isNetlify
   ? icons.reduce((acc, name) => {
-      acc[name] = lazy(() =>
-        import(`lucide-static/icons/${name}.js`).then((mod) => ({
-          default: mod.default,
-        }))
-      )
+      acc[name] = LucideIcons[name as keyof typeof LucideIcons] || null
       return acc
     }, {} as Record<string, any>)
   : LucideIcons
