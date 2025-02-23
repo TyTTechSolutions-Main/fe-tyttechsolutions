@@ -9,7 +9,7 @@ export default function ContactInfo() {
     <div>
       <h2 className="text-3xl md:text-4xl font-bold uppercase">{title}</h2>
       <ul className="mt-6 space-y-10">
-        {SOCIALS.links.map(({ href, label, icon }) => {
+        {SOCIALS.links.map(({ href, label, icon, alt }) => {
           const iconSrc = { Mail, Instagram, Phone, Linkedin }[icon as keyof typeof Icons];
 
           return (
@@ -17,7 +17,7 @@ export default function ContactInfo() {
               {iconSrc && (
                 <img
                   src={iconSrc}
-                  alt={label}
+                  alt={alt}
                   className="w-6 h-6 text-secondary img-custom"
                 />
               )}

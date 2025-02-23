@@ -77,10 +77,10 @@ export const CONTACT = {
 
 export const SOCIALS = {
   links: [
-    { icon: 'Mail', href: 'mailto:tyttechsolutions@gmail.com', label: 'tyttechsolutions@gmail.com' },
-    { icon: 'Instagram', href: '#', label: '/tyttechsolutions' },
-    { icon: 'Phone', href: '#', label: '+56 9 1234 5678' },
-    { icon: 'Linkedin', href: '#', label: '/tyttechsolutions' },
+    { icon: 'Mail', href: 'mailto:tyttechsolutions@gmail.com', label: 'tyttechsolutions@gmail.com', alt: 'Correo' },
+    { icon: 'Instagram', href: '#', label: '/tyttechsolutions', alt: 'Instagram' },
+    { icon: 'Phone', href: '#', label: '+56 9 1234 5678', alt: 'Whatsapp' },
+    { icon: 'Linkedin', href: '#', label: '/tyttechsolutions', alt: 'Linkedin' },
   ],
 };
 
