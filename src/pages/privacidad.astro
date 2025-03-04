@@ -1,14 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import { FOOTER } from '../mocks'
-const { year, company } = FOOTER
+import { COMPANY } from '../mocks'
+const { year, name } = COMPANY
 ---
 
 <Layout>
   <section class='max-w-4xl mx-auto py-15 px-6'>
     <h1 class='text-3xl font-bold text-white'>Política de Privacidad</h1>
     <p class='mt-4 text-gray-300'>
-      En <strong>{company}</strong>, nos comprometemos a proteger tu privacidad.
+      En <strong>{name}</strong>, nos comprometemos a proteger tu privacidad.
       Esta política explica cómo recopilamos, usamos y protegemos tu
       información.
     </p>

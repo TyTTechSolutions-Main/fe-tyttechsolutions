@@ -1,14 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import { FOOTER } from '../mocks'
-const { year, company } = FOOTER
+import { COMPANY } from '../mocks'
+const { year, name } = COMPANY
 ---
 
 <Layout>
   <section class='max-w-4xl mx-auto py-15 px-6'>
     <h1 class='text-3xl font-bold text-white'>Términos y Condiciones</h1>
     <p class='mt-4 text-gray-300'>
-      Bienvenido a <strong>{company}</strong>. Al utilizar nuestros servicios,
+      Bienvenido a <strong>{name}</strong>. Al utilizar nuestros servicios,
       aceptas los siguientes términos y condiciones.
     </p>
 
@@ -24,7 +24,7 @@ const { year, company } = FOOTER
       2. Servicios Prestados
     </h2>
     <p class='mt-2 text-gray-300'>
-      <strong>{company}</strong> ofrece soluciones de desarrollo web, análisis de
+      <strong>{name}</strong> ofrece soluciones de desarrollo web, análisis de
       datos y automatización de procesos. Nos reservamos el derecho de modificar
       o interrumpir cualquier servicio en cualquier momento sin previo aviso.
     </p>
@@ -40,7 +40,7 @@ const { year, company } = FOOTER
       4. Responsabilidad
     </h2>
     <p class='mt-2 text-gray-300'>
-      <strong>{company}</strong> no se hace responsable de daños directos o indirectos
+      <strong>{name}</strong> no se hace responsable de daños directos o indirectos
       derivados del uso de nuestros servicios.
     </p>
 
