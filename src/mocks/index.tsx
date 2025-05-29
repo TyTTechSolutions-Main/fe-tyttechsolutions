@@ -77,8 +77,8 @@ export const CONTACT = {
 
 export const SOCIALS = {
   links: [
-    { icon: 'Mail', href: 'mailto:tyttechsolutions@gmail.com', label: 'tyttechsolutions@gmail.com', alt: 'Correo' },
-    { icon: 'Instagram', href: '#', label: '/tyttechsolutions', alt: 'Instagram' },
+    { icon: 'Mail', href: 'mailto:contacto@tyttechsolutions.cl', label: 'contacto@tyttechsolutions.cl', alt: 'Correo' },
+    //{ icon: 'Instagram', href: '#', label: '/tyttechsolutions', alt: 'Instagram' },
     { icon: 'Phone', href: '#', label: '+56 9 6216 3466', alt: 'WhatsApp' },
     { icon: 'Linkedin', href: '#', label: '/tyttechsolutions', alt: 'Linkedin' },
   ],
